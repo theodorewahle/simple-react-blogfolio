@@ -1,23 +1,13 @@
 {
     "1" : {
-    "title" : "Priority Box",
-    "subtitle" : "a mobile application",
-    "text" :"it helps you",
-    "repo" : "priority-box"
-
+    "title" : "priority-box",
+    "subtitle" : "a mobile application for productivity",
+    "text" : "A mobile app that helps take the thinking out of decision-making but using our exponential ranking algorithm to assess the impact of your decisions on your life's priorities."
   },
   "2" : {
-  "title" : "hot button twitter search",
-  "subtitle" : "search tweets its awesome",
-  "text" :"it searches tweets",
-  "repo" : "hot-button-twitter-search"
-
-},
-"3" : {
-"title" : "hot button twitter search",
-"subtitle" : "search tweets its awesome",
-"text" :"its dope",
-"repo" : "hot-button-twitter-search"
+  "title" : "hot-button-twitter-search",
+  "subtitle" : "search tweets by political relevance",
+  "text" : "How do you separate someone's topical tweets from their tweets about everything else? Hot Button is a new way to search Twitter. Hot Button scans news headlines to identify political topics, and then allows you to sort a user's tweets by their relevancy to recent news. Hot Button's comparisons between news headlines and a user's tweets are powered by scikit-learn!"
 
 }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ThumbnailGrid from './components/ThumbnailGrid'
-import blogPosts from './posts/blogs.json'
+import blogPosts from './posts/blogs'
 import projects from './posts/projects.json'
 
 import {
@@ -30,7 +30,7 @@ class App extends Component {
                 <Route exact path="/projects" component={this.proj}/>
 
                 {Object.keys(blogPosts).map(id => <Route exact path={`/blog/${id}`} component={() => this.blog(blogPosts[id])}/>)}
-                {Object.keys(blogPosts).map(id => <Route exact path={`/projects/${id}`} component={() => this.project(projects[id], id)}/>)}
+                {Object.keys(projects).map(id => <Route exact path={`/projects/${id}`} component={() => this.project(projects[id], id)}/>)}
 
               </div>
           </Router>

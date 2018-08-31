@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Col } from 'reactstrap'
-import blogPosts from '../posts/blogs.json'
+import blogPosts from '../posts/blogs'
 import Thumbnail from './Thumbnail'
 
 const ThumbnailGrid = ({ title, posts}) => {

@@ -14,7 +14,7 @@ const ProjectPage = ({ project }) => (
     </Col>
     </Row>
     <Row className="pt6" style={{justifyContent: "flex-end"}}><h5 className="white pl3 pr2 pt2">see this project on</h5>
-    <SocialIcon url={`https://github.com/theodorewahle/${project.repo}`} color="white"/>
+    <SocialIcon url={`https://github.com/theodorewahle/${project.title}`} color="white"/>
     </Row>
   </Col>
   </Container>
