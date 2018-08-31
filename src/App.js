@@ -1,29 +1,37 @@
 import React, { Component } from 'react';
-import { Container, Col, Row } from 'reactstrap'
-import headshot from './assets/headshot.JPG'
-import { SocialIcon } from 'react-social-icons';
 import ThumbnailGrid from './components/ThumbnailGrid'
 import blogPosts from './posts/blogs.json'
-
+import projects from './posts/projects.json'
 
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom'
 import Home from './Home'
+import BlogPage from './components/BlogPage'
+import ProjectPage from './components/ProjectPage'
 
 class App extends Component {
   thumb = () => {
-    return <ThumbnailGrid posts={blogPosts}/>
+    return <ThumbnailGrid title="blog" posts={blogPosts}/>
   }
+  proj = () => {
+    return <ThumbnailGrid title="projects" posts={projects}/>
+  }
+  blog = blog => <BlogPage blog={blog} />
+  project = (project, id) => <ProjectPage id={id} project={project} />
   render() {
     return (
         <div className="App" style={styles.appStyle}>
           <Router>
               <div>
-              <Route exact path="/" component={Home}/>
-              <Route path="/blog" component={this.thumb}/>
+                <Route exact path="/" component={Home}/>
+                <Route exact path="/blog" component={this.thumb}/>
+                <Route exact path="/projects" component={this.proj}/>
+
+                {Object.keys(blogPosts).map(id => <Route exact path={`/blog/${id}`} component={() => this.blog(blogPosts[id])}/>)}
+                {Object.keys(blogPosts).map(id => <Route exact path={`/projects/${id}`} component={() => this.project(projects[id], id)}/>)}
+
               </div>
           </Router>
         </div>

@@ -1,15 +1,15 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Col } from 'reactstrap'
 import blogPosts from '../posts/blogs.json'
 import Thumbnail from './Thumbnail'
 
 const ThumbnailGrid = ({ title, posts}) => {
   return (
-  <Container>
-    <h1>{title}</h1>
+  <Container className="pv3">
+    <h1 className="f-headline white pl2">{title}</h1>
     <Col>
     {Object.keys(blogPosts).map(key =>
-      <Thumbnail key={key} title={posts[key].title} date={posts[key].date}/>)}
+    <Thumbnail key={key} title={posts[key].title} subtitle={posts[key].subtitle} link={`/${title}/${key}`}/>)}
     </Col>
   </Container>
 )}

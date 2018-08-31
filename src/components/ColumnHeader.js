@@ -7,7 +7,7 @@ import {
 export const ColumnHeader = ({ title, subtitle, link}) => (
   <Row>
     <Col>
-      <Link to="/blog"><h1 className="white f-subheadline pb0 mb0">{title}</h1></Link>
+      <Link to={link}><h1 className="white f-subheadline pb0 mb0">{title}</h1></Link>
     <h5 className="white">{subtitle}</h5>
     </Col>
   </Row>
