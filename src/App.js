@@ -2,36 +2,32 @@ import React, { Component } from 'react';
 import { Container, Col, Row } from 'reactstrap'
 import headshot from './assets/headshot.JPG'
 import { SocialIcon } from 'react-social-icons';
-import Blog from './components/Blog'
-import Portfolio from './components/Portfolio'
+import ThumbnailGrid from './components/ThumbnailGrid'
+import blogPosts from './posts/blogs.json'
+
+
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom'
+import Home from './Home'
 
 class App extends Component {
+  thumb = () => {
+    return <ThumbnailGrid posts={blogPosts}/>
+  }
   render() {
     return (
-      <div className="App" style={styles.appStyle}>
-        <Container >
-          <Row>
-            <Col className="aic">
-      <h1 className="white f-headline">teddy wahle</h1>
-            </Col>
-      </Row>
-          <Row >
-            <Blog />
-            <Portfolio />
-          </Row>
-          <Row className="pt6 pb3">
-            <SocialIcon style={{ marginRight: 8}} url="http://twitter.com/teddywahle" color="white"/>
-            <SocialIcon url="https://www.linkedin.com/in/teddy-wahle/" color="white"/>
-            <SocialIcon style={{ marginLeft: 8}} url="https://github.com/theodorewahle" color="white"/>
-          </Row>
-        </Container>
-      </div>
-    );
+        <div className="App" style={styles.appStyle}>
+          <Router>
+              <div>
+              <Route exact path="/" component={Home}/>
+              <Route path="/blog" component={this.thumb}/>
+              </div>
+          </Router>
+        </div>
+        )
   }
 }
 

@@ -12,7 +12,7 @@ import {
 const Blog = () => {
   return (
     <Col>
-        <ColumnHeader title="writing" subtitle="mostly about software engineering"/>
+        <ColumnHeader title="writing" subtitle="mostly about software engineering" link="/blog"/>
         {Object.keys(blogPosts).map(key =>
           <Thumbnail key={key} title={blogPosts[key].title} date={blogPosts[key].date}/>)}
     </Col>
