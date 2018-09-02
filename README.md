@@ -1,1 +1,1 @@
-Check out the[example](https://teddywahle.me)!
+Check out the [example](https://teddywahle.me)!
